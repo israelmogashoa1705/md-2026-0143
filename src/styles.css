@@ -36,3 +36,13 @@ input,
 textarea {
   border-radius: 5px;
 }
+
+button {
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  border: 2px solid var(--primary);
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
