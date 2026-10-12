@@ -14,5 +14,10 @@ function BookingForm({ service, onReview, onCancel }) {
             setError("Please enter your full name.")
             return;
         }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            setError(Please enter a valid email address.);
+            return;
+        }
     }
 }
