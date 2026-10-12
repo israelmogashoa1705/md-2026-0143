@@ -29,7 +29,12 @@ function BookingForm({ service, onReview, onCancel }) {
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
-        
+        if (selectedDate < today) {
+            setError("Please select today or future.");
+            return;
+        }
+
+        setError("");
 
     }
 }
