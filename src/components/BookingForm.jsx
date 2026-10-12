@@ -16,8 +16,20 @@ function BookingForm({ service, onReview, onCancel }) {
         }
 
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            setError(Please enter a valid email address.);
+            setError("Please enter a valid email address.");
             return;
         }
+
+        if (!date) {
+            setError("Please select an appointment date.");
+            return;
+        }
+
+        const selectedDate = new Date(`${date}T00:00:00`);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        
+
     }
 }
