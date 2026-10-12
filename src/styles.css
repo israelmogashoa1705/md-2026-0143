@@ -92,3 +92,289 @@ button:hover {
 .progress-nav li span {
   font-weight: 700;
 }
+
+.main-content {
+  min-height: 65vh;
+  padding-block: 2rem 4rem;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+h1 {
+  margin-block: 0.25rem 1rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+h2 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h1:focus,
+h2:focus {
+  scroll-margin-top: 1rem;
+}
+
+.eyebrow {
+  color: #405363;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.intro {
+  max-width: 68ch;
+  color: var(--muted);
+}
+
+.search-panel,
+.service-card,
+.selection-summary,
+.empty-state {
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.search-panel {
+  display: grid;
+  gap: 0.75rem;
+  margin-block: 1.5rem;
+}
+
+label,
+legend {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #697987;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border: 2px solid var(--error);
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem 0 0;
+  margin: 0;
+  border: 0;
+}
+
+.filter-group legend {
+  margin-bottom: 0.75rem;
+}
+
+.filter-chip,
+.time-option {
+  color: var(--primary);
+  background: #ffffff;
+}
+
+.filter-chip.selected,
+.time-option.selected {
+  color: #ffffff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.service-card h3,
+.service-card p {
+  margin-block: 0.25rem;
+}
+
+.service-card button {
+  margin-top: auto;
+}
+
+.secondary-button {
+  color: var(--primary);
+  background: #ffffff;
+}
+
+.secondary-button:hover {
+  color: #ffffff;
+}
+
+.text-button {
+  padding-inline: 0;
+  border: 0;
+  background: transparent;
+  color: #104f8b;
+  text-decoration: underline;
+}
+
+.text-button:hover {
+  background: transparent;
+  color: #0b365d;
+}
+
+form {
+  max-width: 720px;
+  margin-top: 1.5rem;
+  padding: clamp(1rem, 4vw, 2rem);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.form-field {
+  display: grid;
+  gap: 0.5rem;
+  margin-block: 1.5rem;
+}
+
+.help-text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.error {
+  margin: 0;
+  color: var(--error);
+  font-weight: 700;
+}
+
+.time-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.time-option {
+  min-width: 90px;
+}
+
+.notice {
+  padding: 1rem;
+  margin-block: 1rem;
+  border-left: 4px solid #755900;
+  background: #fff7d6;
+  color: #403100;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.review-list {
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) 2fr;
+  gap: 0.75rem 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 8px;
+}
+
+.review-list dt {
+  font-weight: 700;
+}
+
+.review-list dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.success-message {
+  padding: 1rem;
+  border: 1px solid #34744a;
+  border-radius: 6px;
+  background: #edf8ef;
+  color: #174d2b;
+  font-weight: 700;
+}
+
+.live-message {
+  min-height: 1.5rem;
+  margin-block: 1rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-footer {
+  padding-block: 1.5rem;
+  background: #e6eaee;
+  border-top: 1px solid var(--border);
+  color: #344453;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 800px) {
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-list {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .review-list dd {
+    margin-bottom: 0.75rem;
+  }
+
+  .button-row button {
+    width: 100%;
+  }
+}
