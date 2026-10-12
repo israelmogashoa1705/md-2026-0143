@@ -97,3 +97,21 @@ button {
   outline: 3px solid #155EEF;
   outline-offset: 3px;
 }
+
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.75rem;
+  color: #FFFFFF;
+  background: #173E63;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+fieldset {
+  border: 1px solid #B7C2CC;
+}
