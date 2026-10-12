@@ -87,6 +87,21 @@ function BookingForm({ service, onReview, onCancel }) {
                         required
                     />
                 </div>
+
+                <div className="form-field">
+                    <label htmlFor="appointment-date">
+                        Appointment date *
+                    </label>
+
+                    <input
+                        id="appointment-date"
+                        name="date"
+                        type="date"
+                        value={date}
+                        onChange={(event) => setDate(event.target.value)}
+                        required
+                    />
+                </div>
             </form>
 
         </section>
