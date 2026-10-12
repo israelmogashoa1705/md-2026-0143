@@ -73,6 +73,10 @@ function ServiceDirectory({ onChooseService }) {
             <p role='status' aria-live='polite'>
                 {filteredServices.length} services found.
             </p>
+
+            {filteredServices.length === 0 ? (
+                <p>No services match your search.</p>
+            ) :   ()
         </section>
     )
 }
