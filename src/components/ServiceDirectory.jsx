@@ -100,3 +100,5 @@ function ServiceDirectory({ onChooseService }) {
         </section>
     );
 }
+
+export default ServiceDirectory
