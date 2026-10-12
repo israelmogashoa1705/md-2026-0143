@@ -66,3 +66,20 @@ fieldset {
   display: grid;
   gap: 0.75rem;
 }
+
+input,
+textarea,
+select,
+button {
+  max-width: 100%;
+  padding: 0.75rem;
+  font: inherit;
+}
+
+input,
+textarea,
+select {
+  border: 1px solid #697987;
+  background: #FFFFFF;
+  color: #24313D;
+}
