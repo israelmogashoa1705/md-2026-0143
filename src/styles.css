@@ -83,3 +83,12 @@ button:hover {
   font-size: 0.9rem;
 }
 
+.progress-nav li[aria-current="step"] {
+  background: #dceef3;
+  outline: 2px solid var(--primary);
+  font-weight: 700;
+}
+
+.progress-nav li span {
+  font-weight: 700;
+}
