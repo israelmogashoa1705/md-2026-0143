@@ -29,16 +29,16 @@ function ServiceDirectory({ onChooseService }) {
 
     const filteredServices = services.filter((service) => {
         const matchesCategory =
-          category === "All services" ||
-          service.category === category;
+            category === "All services" ||
+            service.category === category;
 
         const atchesQuery = service.name
-          .toLowerCase()
-          .includes(query.trim().toLowerCase());
+            .toLowerCase()
+            .includes(query.trim().toLowerCase());
 
         return matchesCategory && matchesQuery;
     });
-    
+
     return (
         <section aria-labelledby="services-heading">
             <h1 id="services-heading">Find a healthcare service</h1>
@@ -48,14 +48,27 @@ function ServiceDirectory({ onChooseService }) {
             </label>
 
             <input
-              id='service-search'
-              type='search'
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder='Search services...'
+                id='service-search'
+                type='search'
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder='Search services...'
             />
 
-            <fieldset></fieldset>
+            <fieldset>
+                <legend>Filter by category</legend>
+
+                {categories.map((item) => (
+                    <button
+                        key={item}
+                        type="button"
+                        aria-pressed={category === item}
+                        onClick={() => setCategory(item)}
+                    >
+                        {item}
+                    </button>
+                ))}
+            </fieldset>
         </section>
     )
 }
