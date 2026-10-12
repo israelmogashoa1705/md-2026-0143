@@ -56,3 +56,13 @@ button:hover {
   background: var(--primary-hover);
   border-color: var(--primary-hover);
 }
+
+.brand small,
+.header-note {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.progress-nav {
+  padding-block: 1rem;
+}
