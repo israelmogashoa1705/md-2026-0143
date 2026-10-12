@@ -1,11 +1,15 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useState } from "react";
+import Header from "./components/Header.jsx";
+import ServiceDirectory from "./components/ServiceDirectory.jsx";
+import BookingForm from "./components/BookingForm.jsx";
+import BookingConfirmation from "./components/BookingConfirmation.jsx";
+import "./styles.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedService, setSelectedService] = useState(null);
+  const [booking, setBooking] = useState(null);
+
+  
 
   return (
     <>
