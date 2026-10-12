@@ -1,0 +1,29 @@
+/*
+  Wireframe colour audit — WCAG 2.1 AA.
+
+  Body text #24313D on #FFFFFF: approximately 13.1:1.
+  Secondary text #4B5967 on #FFFFFF: approximately 7.0:1.
+  White text #FFFFFF on #155B75: approximately 7.3:1.
+  White text #FFFFFF on #A32121: approximately 8.0:1.
+  Focus outline #155EEF on white: approximately 5.1:1.
+
+  Ratios are approximate and must be confirmed with a
+  contrast analyser against the final rendered colours.
+*/
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #24313D;
+  background: #F4F6F8;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
