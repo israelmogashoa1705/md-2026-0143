@@ -1,4 +1,4 @@
-import { usetate } from 'react';
+import { useState } from 'react';
 
 const services = [
     {
