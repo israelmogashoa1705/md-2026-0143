@@ -54,6 +54,14 @@ function BookingForm({ service, onReview, onCancel }) {
                 Selected service: <strong>{service.name}</strong>
             </p>
 
+            <form onSubmit={handleSubmit} noValidate>
+                {error && (
+                    <p id="form-error" role="alert" className="error">
+                        {error}
+                    </p>
+                )}
+            </form>
+
         </section>
     )
 }
