@@ -32,7 +32,7 @@ function ServiceDirectory({ onChooseService }) {
             category === "All services" ||
             service.category === category;
 
-        const atchesQuery = service.name
+        const matchesQuery = service.name
             .toLowerCase()
             .includes(query.trim().toLowerCase());
 
