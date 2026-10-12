@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Header from "./components/Header.jsx";
 import ServiceDirectory from "./components/ServiceDirectory.jsx";
@@ -16,11 +17,17 @@ function App() {
 
   return (
     <>
+      <a className="skip-link" href="#main">
+        Skip to main content
+      </a>
+
       <Header />
 
       <main id="main" className="container main-content">
         {!selectedService && (
-          <ServiceDirectory onChooseService={setSelectedService} />
+          <ServiceDirectory
+            onChooseService={setSelectedService}
+          />
         )}
 
         {selectedService && !booking && (
@@ -30,11 +37,20 @@ function App() {
             onCancel={startOver}
           />
         )}
+
+        {booking && (
+          <BookingConfirmation
+            booking={booking}
+            onStartOver={startOver}
+          />
+        )}
       </main>
 
       <footer className="site-footer">
         <div className="container">
-          <p>Community Clinic — Accessible Booking Prototype</p>
+          <p>
+            Community Clinic — Accessible Booking Prototype
+          </p>
         </div>
       </footer>
     </>
@@ -42,3 +58,4 @@ function App() {
 }
 
 export default App;
+
