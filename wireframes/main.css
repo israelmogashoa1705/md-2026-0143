@@ -83,3 +83,17 @@ select {
   background: #FFFFFF;
   color: #24313D;
 }
+
+button {
+  width: fit-content;
+  border: 2px solid #155B75;
+  background: #155B75;
+  color: #FFFFFF;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid #155EEF;
+  outline-offset: 3px;
+}
