@@ -36,5 +36,13 @@ function BookingForm({ service, onReview, onCancel }) {
 
         setError("");
 
+        onReview({
+            service,
+            name,
+            email,
+            date,
+            accessNeeds,
+        });
+
     }
 }
