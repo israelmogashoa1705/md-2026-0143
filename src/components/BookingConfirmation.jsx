@@ -1,7 +1,40 @@
-import { useState } from "react";
-import Header from "./components/Header.jsx";
-import ServiceDirectory from "./components/ServiceDirectory.jsx";
-import BookingForm from "./components/BookingForm.jsx";
-import BookingConfirmation from "./components/BookingConfirmation.jsx";
-import "./styles.css";
+function BookingConfirmation({ booking, onStartOver }) {
+  return (
+    <section aria-labelledby="confirmation-heading">
+      <h1 id="confirmation-heading" tabIndex={-1}>
+        Demo booking confirmed
+      </h1>
 
+      <p role="status" aria-live="polite">
+        Your demonstration booking workflow is complete.
+      </p>
+
+      <dl className="review-list">
+        <dt>Service</dt>
+        <dd>{booking.service.name}</dd>
+
+        <dt>Patient name</dt>
+        <dd>{booking.name}</dd>
+
+        <dt>Email address</dt>
+        <dd>{booking.email}</dd>
+
+        <dt>Appointment date</dt>
+        <dd>{booking.date}</dd>
+
+        <dt>Accessibility needs</dt>
+        <dd>{booking.accessNeeds || "Not provided"}</dd>
+      </dl>
+
+      <p className="notice">
+        This is a prototype. No real clinic appointment has been created.
+      </p>
+
+      <button type="button" onClick={onStartOver}>
+        Start again
+      </button>
+    </section>
+  );
+}
+
+export default BookingConfirmation;
