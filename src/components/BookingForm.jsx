@@ -60,6 +60,20 @@ function BookingForm({ service, onReview, onCancel }) {
                         {error}
                     </p>
                 )}
+
+                <div className="form-field">
+                    <label htmlFor="patient-name">Full name *</label>
+                    <input
+                        id="patient-name"
+                        name="name"
+                        autoComplete="name"
+                        value={name}
+                        onChange={(event) => setName(event.target.value)}
+                        aria-invalid={Boolean(error && !name.trim())}
+                        aria-describedby={error ? "form-error" : undefined}
+                        required
+                    />
+                </div>
             </form>
 
         </section>
