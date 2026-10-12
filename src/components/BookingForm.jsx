@@ -45,4 +45,15 @@ function BookingForm({ service, onReview, onCancel }) {
         });
 
     }
+    
+    return (
+        <section aria-labelledby="booking-heading">
+            <h1 id="booking-heading">Book an appointment</h1>
+
+            <p>
+                Selected service: <strong>{service.name}</strong>
+            </p>
+
+        </section>
+    )
 }
