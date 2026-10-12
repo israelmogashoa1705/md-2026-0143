@@ -69,6 +69,10 @@ function ServiceDirectory({ onChooseService }) {
                     </button>
                 ))}
             </fieldset>
+
+            <p role='status' aria-live='polite'>
+                {filteredServices.length} services found.
+            </p>
         </section>
     )
 }
