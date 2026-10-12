@@ -74,6 +74,19 @@ function BookingForm({ service, onReview, onCancel }) {
                         required
                     />
                 </div>
+
+                <div className="form-field">
+                    <label htmlFor="patient-email">Email address *</label>
+                    <input
+                        id="patient-email"
+                        name="email"
+                        type="email"
+                        autoComplete="email"
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
+                        required
+                    />
+                </div>
             </form>
 
         </section>
