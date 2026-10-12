@@ -1,0 +1,16 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #24313d;
+  background: #f4f6f8;
+  font-synthesis: none;
+  line-height: 1.6;
+  font-weight: 400;
+  --ink: #24313d;
+  --muted: #4b5967;
+  --primary: #155b75;
+  --primary-hover: #10475b;
+  --border: #b7c2cc;
+  --surface: #ffffff;
+  --error: #a32121;
+  --focus: #155eef;
+}
