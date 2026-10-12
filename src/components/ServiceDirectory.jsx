@@ -76,7 +76,27 @@ function ServiceDirectory({ onChooseService }) {
 
             {filteredServices.length === 0 ? (
                 <p>No services match your search.</p>
-            ) :   ()
+            ) : (
+                <div className='service-grid'>
+                    {filteredServices.map((service) => (
+                        <article className="service-card" key={service.id}>
+                            <h2>{service.name}</h2>
+                            <p>{service.description}</p>
+                            <p>Category: {service.category}</p>
+
+                            <button 
+                                type='button'
+                                onClick={() => onChooseService(service)}
+                            >
+                                Choose service
+                                <span className='sr-only'>
+                                    : {service.name}
+                                </span>
+                            </button>
+                        </article>
+                    ))}
+                </div>
+            )}
         </section>
-    )
+    );
 }
