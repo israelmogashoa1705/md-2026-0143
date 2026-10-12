@@ -115,3 +115,21 @@ button {
 fieldset {
   border: 1px solid #B7C2CC;
 }
+
+@media (max-width: 600px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  header,
+  nav,
+  main section,
+  main aside,
+  footer {
+    padding: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+}
