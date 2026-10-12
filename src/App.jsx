@@ -9,7 +9,10 @@ function App() {
   const [selectedService, setSelectedService] = useState(null);
   const [booking, setBooking] = useState(null);
 
-  
+  function startOver() {
+    setSelectedService(null);
+    setBooking(null);
+  }
 
   return (
     <>
