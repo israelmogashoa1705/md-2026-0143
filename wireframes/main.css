@@ -27,3 +27,25 @@ body {
   margin: 0 auto;
   padding: 1rem;
 }
+
+header,
+nav,
+main section,
+main aside,
+footer {
+  margin-bottom: 1rem;
+  padding: 1.25rem;
+  border: 1px solid #B7C2CC;
+  background: #FFFFFF;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.3;
+}
+
+a {
+  color: #104F8B;
+  text-underline-offset: 0.15em;
+}
