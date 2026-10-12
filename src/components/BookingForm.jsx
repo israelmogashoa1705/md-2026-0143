@@ -45,7 +45,7 @@ function BookingForm({ service, onReview, onCancel }) {
         });
 
     }
-    
+
     return (
         <section aria-labelledby="booking-heading">
             <h1 id="booking-heading">Book an appointment</h1>
@@ -102,8 +102,34 @@ function BookingForm({ service, onReview, onCancel }) {
                         required
                     />
                 </div>
-            </form>
 
+                <div className="form-field">
+                    <label htmlFor="access-needs">
+                        Accessibility or communication needs (optional)
+                    </label>
+
+                    <textarea
+                        id="access-needs"
+                        name="accessNeeds"
+                        rows="4"
+                        value={accessNeeds}
+                        onChange={(event) => setAccessNeeds(event.target.value)}
+                    />
+                </div>
+
+                <p className="notice">
+                    Demonstration only. Do not enter real patient information.
+                </p>
+                <div className="button-row">
+                    <button type="button" onClick={onCancel}>
+                        Cancel
+                    </button>
+
+                    <button type="submit">Review appointment</button>
+                </div>
+            </form>
         </section>
-    )
+    );
 }
+
+export default BookingForm;
