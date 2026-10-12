@@ -14,3 +14,25 @@
   --error: #a32121;
   --focus: #155eef;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+input,
+textarea {
+  border-radius: 5px;
+}
