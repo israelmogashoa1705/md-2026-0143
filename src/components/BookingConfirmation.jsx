@@ -1,5 +1,11 @@
 import { useEffect, useRef } from "react";
 
+export default function BookingConfirmation({ booking, reference, onStartOver }) {
+    const headingRef = useRef(null);
+    useEffect(() => { headingRef.current?.focus(); }, []);
+    const dateLabel = new Date(`${booking.date}T12:00:00`).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+}
+
 function BookingConfirmation({ booking, onStartOver }) {
   return (
     <section aria-labelledby="confirmation-heading">
