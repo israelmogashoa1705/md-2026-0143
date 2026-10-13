@@ -21,6 +21,16 @@ export default function BookingReview({ booking, onBack, onConfirm }) {
                     <div><dt>Duration</dt><dd>{booking.duration}</dd></div>
                 </dl>
             </div>
+            <div className="review-card">
+                <h2>Contact details</h2>
+                <dl className="summary-list">
+                    <div><dt>Name</dt><dd>{booking.name}</dd></div>
+                    <div><dt>Email</dt><dd>{booking.email}</dd></div>
+                    <div><dt>Phone</dt><dd>{booking.phone}</dd></div>
+                    <div><dt>Accessibility needs</dt><dd>{booking.accessNeeds || "None provided"}</dd></div>
+                </dl>
+            </div>
+
 
 
 
