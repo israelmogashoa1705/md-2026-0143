@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-function BookingForm({ service, onReview, onCancel }) {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [date, setDate] = useState("");
-    const [accessNeeds, setAccessNeeds] = useState("");
-    const [error, setError] = useState("");
+function dateString(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
 
     function handleSubmit(event) {
         event.preventDefault();
