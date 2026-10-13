@@ -11,6 +11,17 @@ export default function BookingReview({ booking, onBack, onConfirm }) {
             <div className="step-indicator">STEP 2 OF 2 · REVIEW</div>
             <h1 id="review-heading" ref={headingRef} tabIndex="-1">Review your booking</h1>
             <p className="muted">Check the information below before confirming this demonstration booking.</p>
+            <div className="review-card">
+                <h2>Appointment summary</h2>
+                <dl className="summary-list">
+                    <div><dt>Service</dt><dd>{booking.serviceName}</dd></div>
+                    <div><dt>Practitioner</dt><dd>{booking.practitioner}</dd></div>
+                    <div><dt>Date</dt><dd>{dateLabel}</dd></div>
+                    <div><dt>Time</dt><dd>{booking.time}</dd></div>
+                    <div><dt>Duration</dt><dd>{booking.duration}</dd></div>
+                </dl>
+            </div>
+
 
 
             )
