@@ -344,8 +344,88 @@ fieldset legend {
   background: #edf6f4;
 }
 
-.service-card .button {
-  margin-top: 1rem;
+.service-card-actions {
+  margin-top: auto;
+  padding-top: .5rem;
+  width: 100%;
+}
+
+.service-card-actions .button {
+  width: 100%;
+}
+
+.details-panel {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.details-hero {
+  background: #e2f1ee;
+  border-radius: 1.25rem;
+  padding: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.details-hero .service-icon {
+  width: 52px;
+  height: 52px;
+}
+
+.details-lead {
+  max-width: 760px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #304d49;
+}
+
+.details-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  margin: 1.2rem 0 1.5rem;
+}
+
+.details-meta span {
+  background: #fff;
+  border: 1px solid #c9d8d5;
+  border-radius: .6rem;
+  padding: .7rem .85rem;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.details-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 1.35rem;
+}
+
+.details-card h2 {
+  margin-bottom: .8rem;
+}
+
+.details-card h2:not(:first-child) {
+  margin-top: 1.25rem;
+}
+
+.details-card p,
+.details-card li {
+  color: #405956;
+  line-height: 1.65;
+}
+
+.details-card li {
+  margin: .45rem 0;
+}
+
+.details-card-wide {
+  grid-column: 1 / -1;
 }
 
 .empty-state {
@@ -552,8 +632,17 @@ fieldset legend {
 
   .directory-controls,
   .service-grid,
-  .form-grid {
+  .form-grid,
+  .details-grid {
     grid-template-columns: 1fr;
+  }
+
+  .details-card-wide {
+    grid-column: auto;
+  }
+
+  .details-hero {
+    padding: 1.4rem;
   }
 
   .field-wide {
