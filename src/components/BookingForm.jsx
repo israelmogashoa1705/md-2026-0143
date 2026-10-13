@@ -8,6 +8,20 @@ function dateString(date) {
 }
 
 
+export default function BookingForm({ service, onBack, onReview }) {
+  const headingRef = useRef(null);
+  const [practitioner, setPractitioner] = useState(service.practitioners[0] || "");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [accessNeeds, setAccessNeeds] = useState("");
+  const [errors, setErrors] = useState({});
+  const [attempted, setAttempted] = useState(false);
+
+  
+
     function handleSubmit(event) {
         event.preventDefault();
 
