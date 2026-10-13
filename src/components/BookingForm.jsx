@@ -47,15 +47,35 @@ export default function BookingForm({ service, onBack, onReview }) {
             return;
         }
 
-        onReview {(
-            serviceId: service.id,
-            serviceName: service.name,
-            practitioner,
-            date,
-            time,
-            name: name.trim(),
-            email: email.trim(),
-            phone: phone.trim(),
-            accessNeeds: accessNeeds.trim()
-        )};
+        onReview {
+            (
+                serviceId: service.id,
+                serviceName: service.name,
+                practitioner,
+                date,
+                time,
+                name: name.trim(),
+                    email: email.trim(),
+                        phone: phone.trim(),
+                            accessNeeds: accessNeeds.trim()
+        )
+        };
+
+        function errorText(field) {
+            return attempted && errors[field] ? <span className="field-error" id={`${field}-error`}>{errors[field]}</span> : null;
+        }
+
+        return (
+            <section className="booking-panel" aria-labelledby="booking-heading">
+                <button className="text-button" type="button" onClick={onBack}>← Back to services</button>
+                <div className="step-indicator">STEP 1 OF 2 · APPOINTMENT DETAILS</div>
+                <h1 id="booking-heading" ref={headingRef} tabIndex="-1">Book {service.name.toLowerCase()}</h1>
+                <p className="muted">{service.description} This is a demonstration booking and does not send information to a clinic.</p>
+
+                {attempted && Object.keys(errors).length > 0 && (
+                    <div className="error-summary" role="alert" aria-labelledby="error-summary-heading">
+                        <h2 id="error-summary-heading">Please check the following fields</h2>
+                        <ul>{Object.entries(errors).map(([field, message]) => <li key={field}><a href={`#${field}`}>{message}</a></li>)}</ul>
+                    </div>
+                )}
     }
