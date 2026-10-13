@@ -38,3 +38,24 @@ export default function BookingForm({ service, onBack, onReview }) {
         setErrors(nextErrors);
         return Object.keys(nextErrors).length === 0;
     }
+
+    function submit(event) {
+        event.preventDefault();
+        setAttempted(true);
+        if (!validate()) {
+            document.getElementById(Object.keys(errors)[0] || "name")?.focus();
+            return;
+        }
+
+        onReview {(
+            serviceId: service.id,
+            serviceName: service.name,
+            practitioner,
+            date,
+            time,
+            name: name.trim(),
+            email: email.trim(),
+            phone: phone.trim(),
+            accessNeeds: accessNeeds.trim()
+        )};
+    }
