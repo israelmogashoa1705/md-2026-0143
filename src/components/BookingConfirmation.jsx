@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 function BookingConfirmation({ booking, onStartOver }) {
   return (
     <section aria-labelledby="confirmation-heading">
