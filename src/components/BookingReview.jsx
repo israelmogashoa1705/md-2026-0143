@@ -30,7 +30,7 @@ export default function BookingReview({ booking, onBack, onConfirm }) {
                     <div><dt>Accessibility needs</dt><dd>{booking.accessNeeds || "None provided"}</dd></div>
                 </dl>
             </div>
-            <p className="demo-notice"><strong>Prototype notice:</strong> Confirming will create a reference number in this browser session only. It will not reserve a real appointment or contact a clinic.</p>
+            <p className="demo-notice"><strong>Prototype notice:</strong> Confirming will create a reference number.</p>
             <div className="form-actions">
                 <button className="button button-secondary" type="button" onClick={onBack}>Edit details</button>
                 <button className="button button-primary" type="button" onClick={onConfirm}>Confirm demo booking</button>
