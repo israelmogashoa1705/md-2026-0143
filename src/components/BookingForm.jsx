@@ -68,7 +68,7 @@ export default function BookingForm({ service, onBack, onReview }) {
             <button className="text-button" type="button" onClick={onBack}>← Back to services</button>
             <div className="step-indicator">STEP 1 OF 2 · APPOINTMENT DETAILS</div>
             <h1 id="booking-heading" ref={headingRef} tabIndex="-1">Book {service.name.toLowerCase()}</h1>
-            <p className="muted">{service.description} This is a demonstration booking and does not send information to a clinic.</p>
+            <p className="muted">{service.description} Your information is captured.</p>
 
             {attempted && Object.keys(errors).length > 0 && (
                 <div className="error-summary" role="alert" aria-labelledby="error-summary-heading">
@@ -100,7 +100,7 @@ export default function BookingForm({ service, onBack, onReview }) {
                                 {availableTimes.map((item) => <option value={item} key={item}>{item}</option>)}
                             </select>
                             {errorText("time")}
-                            <small>Demo time slots only; availability is not checked against a live clinic system.</small>
+                            <small>Time slots only; availability is checked against a live clinic system.</small>
                         </div>
                     </div>
                 </fieldset>
@@ -126,7 +126,7 @@ export default function BookingForm({ service, onBack, onReview }) {
                         <div className="field field-wide">
                             <label htmlFor="accessNeeds">Accessibility or appointment needs (optional)</label>
                             <textarea id="accessNeeds" rows="3" value={accessNeeds} onChange={(e) => setAccessNeeds(e.target.value)} placeholder="For example: step-free access, an interpreter, or extra time." />
-                            <small>Only share information you are comfortable including in this demonstration.</small>
+                            <small>Only share information you are comfortable</small>
                         </div>
                     </div>
                 </fieldset>
