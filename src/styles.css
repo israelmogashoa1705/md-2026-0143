@@ -544,12 +544,6 @@ fieldset legend {
   overflow-wrap: anywhere;
 }
 
-.demo-notice {
-  padding: 1rem;
-  border-left: 4px solid #a44300;
-  background: #fff7ed;
-  line-height: 1.55;
-}
 
 .confirmation-panel {
   max-width: 760px;

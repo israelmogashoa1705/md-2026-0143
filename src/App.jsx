@@ -56,7 +56,6 @@ export default function App() {
       <footer className="site-footer">
         <div className="container footer-inner">
           <p><strong>Community Healthcare Clinic</strong></p>
-          <p>Coursework prototype · Not a real medical booking service</p>
           <p>If you need urgent medical help, contact your local emergency service.</p>
         </div>
       </footer>

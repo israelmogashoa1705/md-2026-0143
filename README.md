@@ -60,9 +60,9 @@ community-healthcare-clinic/
 
 ## Architecture and state
 
-`App.jsx` owns the overall workflow state: directory, form, review, and confirmation. It also stores the selected service, booking details, and generated demo reference. Keeping this state at the top level makes it possible to pass booking information between screens and retain details when a user returns to edit the form. `ServiceDirectory.jsx` owns the temporary search query and category filter because these values only affect the directory. The service data is kept separately in `src/data/services.js` so that service descriptions and practitioner options can be maintained without rewriting the UI.
+`App.jsx` owns the overall workflow state: directory, form, review, and confirmation. It also stores the selected service, booking details, and generate reference. Keeping this state at the top level makes it possible to pass booking information between screens and retain details when a user returns to edit the form. `ServiceDirectory.jsx` owns the temporary search query and category filter because these values only affect the directory. The service data is kept separately in `src/data/services.js` so that service descriptions and practitioner options can be maintained without rewriting the UI.
 
-This is a small prototype, so state is held in React rather than a routing library or database. That keeps the application understandable for coursework and avoids unnecessary dependencies. The trade-off is that refreshing the page clears the booking, and the demo reference is not a real reservation.
+This is a small prototype, so state is held in React rather than a routing library or database. That keeps the application understandable for coursework and avoids unnecessary dependencies. The trade-off is that refreshing the page clears the booking, and the reference is not a real reservation.
 
 ## Accessibility decisions and trade-offs
 
