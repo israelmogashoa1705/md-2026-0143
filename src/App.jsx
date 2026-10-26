@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Header from "./components/Header.jsx";
 import ServiceDirectory from "./components/ServiceDirectory.jsx";
-import ServiceDetails from "./components/ServiceDetails.jsx";
+import ServiceDetails from "./components/serviceDetails.jsx";
 import BookingForm from "./components/BookingForm.jsx";
 import BookingReview from "./components/BookingReview.jsx";
 import BookingConfirmation from "./components/BookingConfirmation.jsx";
