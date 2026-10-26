@@ -23,7 +23,7 @@ export default function ServiceDirectory({ onChoose }) {
             <div className="hero">
                 <p className="eyebrow">YOUR HEALTH, YOUR COMMUNITY</p>
                 <h1 id="directory-heading">Find care that works for you.</h1>
-                <p>Explore local clinic services and book a demo appointment in a few simple steps.</p>
+                <p>Explore local clinic services and book in a few simple steps.</p>
             </div>
 
             <div className="directory-controls">
