@@ -8,11 +8,10 @@ export default function BookingConfirmation({ booking, reference, onStartOver })
   return (
     <section className="confirmation-panel" aria-labelledby="confirmation-heading">
       <div className="success-icon" aria-hidden="true">✓</div>
-      <p className="eyebrow">DEMO BOOKING COMPLETE</p>
-      <h1 id="confirmation-heading" ref={headingRef} tabIndex="-1">Your demo booking is confirmed</h1>
-      <p>This confirmation is for the coursework prototype only. No real appointment has been made.</p>
+      <p className="eyebrow">BOOKING COMPLETE</p>
+      <h1 id="confirmation-heading" ref={headingRef} tabIndex="-1">Your booking is confirmed</h1>
       <div className="reference-number">
-        <span>Demo reference number</span>
+        <span>Reference number</span>
         <strong>{reference}</strong>
       </div>
       <div className="review-card confirmation-summary">
@@ -24,7 +23,6 @@ export default function BookingConfirmation({ booking, reference, onStartOver })
           <div><dt>Time</dt><dd>{booking.time}</dd></div>
         </dl>
       </div>
-      <p>In a real service, the clinic would provide verified booking details and next steps.</p>
       <button className="button button-primary" type="button" onClick={onStartOver}>Start a new booking</button>
     </section>
   );
