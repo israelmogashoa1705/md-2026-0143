@@ -4,7 +4,7 @@ export default function ServiceDetails({ service, onBack, onBook }) {
     useEffect(() => {
         headingRef.current?.focus();
     }, []);
-    
+
     if (!service) return null;
     return (
         <section className="details-panel" aria-labelledby="service-details-heading">
@@ -12,7 +12,13 @@ export default function ServiceDetails({ service, onBack, onBook }) {
             <div className="details-hero">
                 <span className="service-icon" aria-hidden="true">✚</span>
                 <p className="eyebrow">{service.category}</p>
-                <h1 id="service-details-heading">{service.name}</h1>
+                <h1
+                    id="service-details-heading"
+                    ref={headingRef}
+                    tabIndex="-1"
+                >
+                    {service.name}
+                </h1>
                 <p className="details-lead">{service.description}</p>
                 <div className="details-meta">
                     <span><strong>Typical visit:</strong> {service.duration}</span>
