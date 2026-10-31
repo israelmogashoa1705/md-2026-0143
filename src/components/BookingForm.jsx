@@ -7,17 +7,15 @@ function dateString(date) {
     return `${year}-${month}-${day}`;
 }
 
-export default function BookingForm({ service, onBack, onReview }) {
+export default function BookingForm({ service, initialBooking, onBack, onReview }) {
     const headingRef = useRef(null);
-    const [practitioner, setPractitioner] = useState(service.practitioners[0] || "");
-    const [date, setDate] = useState("");
-    const [time, setTime] = useState("");
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [accessNeeds, setAccessNeeds] = useState("");
-    const [errors, setErrors] = useState({});
-    const [attempted, setAttempted] = useState(false);
+    const [practitioner, setPractitioner] = useState(initialBooking.practitioner || service.practitioners[0] || "");
+    const [date, setDate] = useState(initialBooking.date || "");
+    const [time, setTime] = useState(initialBooking.time || "");
+    const [name, setName] = useState(initialBooking.name || "");
+    const [email, setEmail] = useState(initialBooking.email || "");
+    const [phone, setPhone] = useState(initialBooking.phone || "");
+    const [accessNeeds, setAccessNeeds] = useState(initialBooking.accessNeeds || "");
 
     useEffect(() => { headingRef.current?.focus(); }, []);
 
