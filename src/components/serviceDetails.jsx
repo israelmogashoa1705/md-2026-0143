@@ -1,4 +1,10 @@
 export default function ServiceDetails({ service, onBack, onBook }) {
+    const headingRef = useRef(null);
+
+    useEffect(() => {
+        headingRef.current?.focus();
+    }, []);
+    
     if (!service) return null;
     return (
         <section className="details-panel" aria-labelledby="service-details-heading">
