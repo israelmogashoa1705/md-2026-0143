@@ -36,13 +36,58 @@ export default function BookingForm({ service, initialBooking, onBack, onReview 
         return Object.keys(nextErrors).length === 0;
     }
 
+
+
+
     function submit(event) {
         event.preventDefault();
         setAttempted(true);
-        if (!validate()) {
-            document.getElementById(Object.keys(errors)[0] || "name")?.focus();
+
+        const nextErrors = {};
+
+        if (!name.trim()) {
+            nextErrors.name = "Enter your full name.";
+        }
+
+        if (!email.trim()) {
+            nextErrors.email = "Enter your email address.";
+        } else if (
+            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
+        ) {
+            nextErrors.email =
+                "Enter an email address in a valid format.";
+        }
+
+        if (!phone.trim()) {
+            nextErrors.phone = "Enter a contact phone number.";
+        }
+
+        if (!practitioner) {
+            nextErrors.practitioner = "Choose a practitioner.";
+        }
+
+        if (!date) {
+            nextErrors.date = "Choose an appointment date.";
+        } else if (date < today) {
+            nextErrors.date =
+                "Choose today or a future date.";
+        }
+
+        if (!time) {
+            nextErrors.time = "Choose an appointment time.";
+        }
+
+        setErrors(nextErrors);
+
+        const firstError = Object.keys(nextErrors)[0];
+
+        if (firstError) {
+            requestAnimationFrame(() => {
+                document.getElementById(firstError)?.focus();
+            });
             return;
         }
+
         onReview({
             serviceId: service.id,
             serviceName: service.name,
