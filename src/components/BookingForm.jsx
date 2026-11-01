@@ -16,27 +16,13 @@ export default function BookingForm({ service, initialBooking, onBack, onReview 
     const [email, setEmail] = useState(initialBooking.email || "");
     const [phone, setPhone] = useState(initialBooking.phone || "");
     const [accessNeeds, setAccessNeeds] = useState(initialBooking.accessNeeds || "");
+    const [errors, setErrors] = useState({});
+    const [attempted, setAttempted] = useState(false);
 
     useEffect(() => { headingRef.current?.focus(); }, []);
 
     const today = dateString(new Date());
     const availableTimes = ["09:00", "10:00", "11:30", "13:00", "14:30"];
-
-    function validate() {
-        const nextErrors = {};
-        if (!name.trim()) nextErrors.name = "Enter your full name.";
-        if (!email.trim()) nextErrors.email = "Enter your email address.";
-        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) nextErrors.email = "Enter an email address in a format like name@example.com.";
-        if (!phone.trim()) nextErrors.phone = "Enter a contact phone number.";
-        if (!practitioner) nextErrors.practitioner = "Choose a practitioner.";
-        if (!date) nextErrors.date = "Choose an appointment date.";
-        else if (date < today) nextErrors.date = "Choose today or a future date.";
-        if (!time) nextErrors.time = "Choose an appointment time.";
-        setErrors(nextErrors);
-        return Object.keys(nextErrors).length === 0;
-    }
-
-
 
 
     function submit(event) {
@@ -143,7 +129,7 @@ export default function BookingForm({ service, initialBooking, onBack, onReview 
                                 {availableTimes.map((item) => <option value={item} key={item}>{item}</option>)}
                             </select>
                             {errorText("time")}
-                            <small>Time slots only; availability is checked against a live clinic system.</small>
+                            <small>These are demonstration appointment times and are notconnected to live clinic availability..</small>
                         </div>
                     </div>
                 </fieldset>
