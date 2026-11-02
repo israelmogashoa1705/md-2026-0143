@@ -1,18 +1,48 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Accessible community healthcare service and appointment booking ."
-    />
-    <title>Community Clinic | Accessible Booking</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wireframe 1: Landing and Discovery | Community Healthcare Clinic</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="index.html">+ Community Healthcare Clinic</a>
+      <nav aria-label="Wireframe pages">
+        <a href="index.html" aria-current="page">Discovery</a>
+        <a href="listing.html">Service listing</a>
+        <a href="booking.html">Booking form</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="placeholder hero-placeholder" aria-labelledby="hero-heading">
+      <p class="eyebrow">COMMUNITY HEALTHCARE CLINIC</p>
+      <h1 id="hero-heading">Find care that works for you</h1>
+      <p class="intro">Search our services, choose the one that suits you, and book an appointment. Every step works with a keyboard and a screen reader.</p>
+      <a class="wire-button" href="listing.html">Explore services</a>
+    </section>
+
+    <section class="wireframe-block" aria-labelledby="popular-heading">
+      <h2 id="popular-heading">Popular services</h2>
+      <div class="cards">
+        <article class="placeholder"><h3>General consultation</h3><p>Short description and typical visit length.</p><a href="booking.html">View and book</a></article>
+        <article class="placeholder"><h3>Preventive health screening</h3><p>Short description and typical visit length.</p><a href="booking.html">View and book</a></article>
+        <article class="placeholder"><h3>Maternal and family health</h3><p>Short description and typical visit length.</p><a href="booking.html">View and book</a></article>
+      </div>
+    </section>
+
+    <aside class="placeholder support" aria-labelledby="support-heading">
+      <h2 id="support-heading">Need urgent help?</h2>
+      <p>If you need urgent medical help, contact your local emergency service. This website cannot handle emergencies.</p>
+    </aside>
+  </main>
+
+  <footer class="site-footer"><div class="wrap">Community Healthcare Clinic</div></footer>
+</body>
 </html>
 
