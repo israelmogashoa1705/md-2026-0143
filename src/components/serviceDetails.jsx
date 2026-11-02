@@ -1,115 +1,68 @@
-
-import { useEffect, useRef } from "react";
-
 export default function ServiceDetails({ service, onBack, onBook }) {
-    const headingRef = useRef(null);
+  if (!service) return null;
 
-    useEffect(() => {
-        headingRef.current?.focus();
-    }, []);
+  return (
+    <section className="details-panel" aria-labelledby="service-details-heading">
+      <button className="text-button" type="button" onClick={onBack}>
+        ← Back to all services
+      </button>
 
-    if (!service) return null;
+      <div className="details-hero">
+        <span className="service-icon" aria-hidden="true">
+          ✚
+        </span>
+        <p className="eyebrow">{service.category}</p>
+        <h1 id="service-details-heading" tabIndex="-1">
+          {service.name}
+        </h1>
+        <p className="details-lead">{service.description}</p>
 
-    return (
-        <section
-            className="details-panel"
-            aria-labelledby="service-details-heading"
-        >
-            <button
-                className="text-button"
-                type="button"
-                onClick={onBack}
-            >
-                ← Back to all services
-            </button>
+        <div className="details-meta">
+          <span>
+            <strong>Typical visit:</strong> {service.duration}
+          </span>
+          <span>
+            <strong>Appointment type:</strong> {service.appointmentType || "In-person clinic visit"}
+          </span>
+        </div>
 
-            <div className="details-hero">
-                <span className="service-icon" aria-hidden="true">
-                    ✚
-                </span>
+        <button className="button button-primary" type="button" onClick={() => onBook(service)}>
+          Book this service →
+        </button>
+      </div>
 
-                <p className="eyebrow">{service.category}</p>
+      <div className="details-grid">
+        <article className="details-card">
+          <h2>What this service includes</h2>
+          <ul>
+            {(service.includes || []).map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
 
-                <h1
-                    id="service-details-heading"
-                    ref={headingRef}
-                    tabIndex="-1"
-                >
-                    {service.name}
-                </h1>
+        <article className="details-card">
+          <h2>Who may find it useful?</h2>
+          <p>{service.audience}</p>
+          <h2>How to prepare</h2>
+          <p>{service.preparation}</p>
+        </article>
 
-                <p className="details-lead">
-                    {service.description}
-                </p>
+        <article className="details-card details-card-wide">
+          <h2>Practitioners available</h2>
+          <ul>
+            {(service.practitioners || []).map((person) => (
+              <li key={person}>{person}</li>
+            ))}
+          </ul>
+        </article>
+      </div>
 
-                <div className="details-meta">
-                    <span>
-                        <strong>Typical visit:</strong>{" "}
-                        {service.duration}
-                    </span>
-
-                    <span>
-                        <strong>Appointment type:</strong>{" "}
-                        {service.appointmentType || "In-person clinic visit"}
-                    </span>
-                </div>
-
-                <button
-                    className="button button-primary"
-                    type="button"
-                    onClick={() => onBook(service)}
-                >
-                    Book this service →
-                </button>
-            </div>
-
-            <div className="details-grid">
-                <article className="details-card">
-                    <h2>What this service includes</h2>
-
-                    <ul>
-                        {(service.includes || []).map((item) => (
-                            <li key={item}>{item}</li>
-                        ))}
-                    </ul>
-                </article>
-
-                <article className="details-card">
-                    <h2>Who may find it useful?</h2>
-                    <p>{service.audience}</p>
-
-                    <h2>How to prepare</h2>
-                    <p>{service.preparation}</p>
-                </article>
-
-                <article className="details-card details-card-wide">
-                    <h2>Practitioners available</h2>
-
-                    <ul>
-                        {(service.practitioners || []).map((person) => (
-                            <li key={person}>{person}</li>
-                        ))}
-                    </ul>
-                </article>
-            </div>
-
-            <div className="form-actions">
-                <button
-                    className="button button-secondary"
-                    type="button"
-                    onClick={onBack}
-                >
-                    Explore other services
-                </button>
-
-                <button
-                    className="button button-primary"
-                    type="button"
-                    onClick={() => onBook(service)}
-                >
-                    Continue to booking
-                </button>
-            </div>
-        </section>
-    );
+      <div className="form-actions">
+        <button className="button button-secondary" type="button" onClick={onBack}>
+          Explore other services
+        </button>
+      </div>
+    </section>
+  );
 }
