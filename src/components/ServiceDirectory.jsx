@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { categories, services } from "../data/services.js";
+import { categories, services } from "..src/data/services.js";
 
 export default function ServiceDirectory({ onChoose }) {
     const [query, setQuery] = useState("");
