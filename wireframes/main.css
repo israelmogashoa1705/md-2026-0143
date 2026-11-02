@@ -1,10 +1,27 @@
 /*
-  Wireframe palette contrast notes (WCAG relative-luminance calculations should be
-  rechecked with a contrast analyser before submission):
-  #173331 on #ffffff is approximately 13:1 (passes 4.5:1 normal text).
-  #ffffff on #0b5d57 is approximately 7.5:1 (passes 4.5:1 normal text).
-  #526765 on #ffffff is approximately 5.8:1 (passes 4.5:1 normal text).
-  #075a76 on #ffffff is approximately 7:1 (passes 4.5:1 normal text).
+  Community Healthcare Clinic: wireframe styles (semantic HTML + vanilla CSS, no JavaScript).
+
+  COMPUTED CONTRAST RATIOS (WCAG 2.1 relative luminance, (L1+0.05)/(L2+0.05)).
+  Normal text needs 4.5:1. Large text (18pt, or 14pt bold) and UI components need 3:1.
+
+  Text
+  #173331 on #ffffff  = 13.51:1  body text on white          PASS
+  #173331 on #f5f8f7  = 12.64:1  body text on page           PASS
+  #526765 on #ffffff  =  6.02:1  muted text                  PASS
+  #526765 on #f5f8f7  =  5.64:1  muted text on page          PASS
+  #405956 on #ffffff  =  7.55:1  intro text                  PASS
+  #075a76 on #ffffff  =  7.68:1  links                       PASS
+  #075a76 on #f5f8f7  =  7.19:1  links on page               PASS
+  #08433f on #f5f8f7  = 10.43:1  eyebrow text                PASS
+  #ffffff on #0b5d57  =  7.73:1  button label                PASS
+  #ffffff on #08433f  = 11.14:1  button hover label          PASS
+  #ffffff on #173331  = 13.51:1  footer text                 PASS
+  #173331 on #fff7ed  = 12.73:1  note text                   PASS
+
+  Non-text (UI components)
+  #a44300 on #ffffff  =  6.21:1  focus ring                  PASS (3:1)
+  #a44300 on #f5f8f7  =  5.81:1  focus ring on page          PASS (3:1)
+  #6b837f on #ffffff  =  4.06:1  input border                PASS (3:1)
 */
 :root {
   font-family: Arial, Helvetica, sans-serif;
@@ -193,7 +210,7 @@ textarea {
   width: 100%;
   min-height: 44px;
   padding: .65rem;
-  border: 1px solid #819895;
+  border: 1px solid #6b837f;
   border-radius: .35rem;
   font: inherit;
   background: #fff;
@@ -260,3 +277,8 @@ fieldset label {
     scroll-behavior: auto !important;
   }
 }
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; padding: 0; }
+.help { display: block; color: #526765; margin: -.6rem 0 1rem; font-size: .9rem; }
+.two-col { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+@media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
