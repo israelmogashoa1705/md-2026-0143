@@ -3,31 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Booking Form Wireframe</title>
+  <title>Wireframe 3: Booking Form | Community Healthcare Clinic</title>
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header"><div class="wrap header-row"><a class="brand" href="index.html">+ Community Healthcare Clinic</a><nav aria-label="Wireframe pages"><a href="index.html">Discovery</a><a href="listing.html">Service listing</a><a href="booking.html" aria-current="page">Booking form</a></nav></div></header>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="index.html">+ Community Healthcare Clinic</a>
+      <nav aria-label="Wireframe pages">
+        <a href="index.html">Discovery</a>
+        <a href="listing.html">Service listing</a>
+        <a href="booking.html" aria-current="page">Booking form</a>
+      </nav>
+    </div>
+  </header>
+
   <main id="main" class="wrap narrow">
     <h1>Book a healthcare appointment</h1>
-    <form class="placeholder form-wireframe" action="#" method="get">
-      <fieldset><legend>Appointment details</legend>
-        <label for="service">Service</label><select id="service" name="service"><option>General consultation</option><option>Preventive health screening</option></select>
-        <label for="practitioner">Practitioner</label><select id="practitioner" name="practitioner"><option>Select practitioner</option></select>
-        <label for="date">Appointment date</label><input id="date" name="date" type="date">
-        <label for="time">Appointment time</label><select id="time" name="time"><option>Select time</option></select>
+    <p class="intro">Fields marked * are required.</p>
+
+    <form class="placeholder form-wireframe" action="#" method="get" novalidate>
+      <fieldset>
+        <legend>Appointment details</legend>
+        <label for="service">Service *</label>
+        <select id="service" name="service" required><option>General consultation</option><option>Preventive health screening</option></select>
+
+        <label for="practitioner">Practitioner *</label>
+        <select id="practitioner" name="practitioner" required aria-describedby="practitioner-help"><option>Select practitioner</option></select>
+        <small id="practitioner-help" class="help">Available times update when you change practitioner.</small>
+
+        <label for="date">Appointment date *</label>
+        <input id="date" name="date" type="date" required aria-describedby="date-help">
+        <small id="date-help" class="help">Choose today or a later date.</small>
+
+        <label for="time">Appointment time *</label>
+        <select id="time" name="time" required><option>Select time</option></select>
       </fieldset>
-      <fieldset><legend>Your details</legend>
-        <label for="name">Full name</label><input id="name" name="name" autocomplete="name" required>
-        <label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required>
-        <label for="phone">Contact phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required>
-        <label for="access">Accessibility or appointment needs (optional)</label><textarea id="access" name="access" rows="3"></textarea>
+
+      <fieldset>
+        <legend>Your details</legend>
+        <label for="name">Full name *</label>
+        <input id="name" name="name" autocomplete="name" required>
+
+        <label for="email">Email address *</label>
+        <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-help">
+        <small id="email-help" class="help">We will send your confirmation here.</small>
+
+        <label for="phone">Contact phone number *</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+
+        <label for="access">Accessibility or appointment needs (optional)</label>
+        <textarea id="access" name="access" rows="3" aria-describedby="access-help"></textarea>
+        <small id="access-help" class="help">Only share what you are comfortable sharing.</small>
       </fieldset>
-      <p class="note">Error summary and inline validation messages appear here after an invalid submission.</p>
+
+      <section class="note" aria-labelledby="errors-heading">
+        <h2 id="errors-heading">Error summary (appears after an invalid submission)</h2>
+        <p>Each message links to its field. Inline messages repeat beside the field and are announced by a polite live region.</p>
+      </section>
+
       <button class="wire-button" type="submit">Review booking</button>
     </form>
+
+    <aside class="placeholder support" aria-labelledby="prep-heading">
+      <h2 id="prep-heading">Before you book</h2>
+      <p>Bring your medicine list and any clinic cards. Tell us about any access needs and we will prepare.</p>
+    </aside>
   </main>
+
   <footer class="site-footer"><div class="wrap">Community Healthcare Clinic</div></footer>
 </body>
 </html>
