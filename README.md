@@ -7,7 +7,6 @@ The application includes six healthcare services, a searchable service directory
 
 The project prioritises inclusive interaction through semantic HTML, keyboard navigation, visible focus indicators, accessible form validation and screen reader feedback.
 
-Important: This is an educational prototype. It does not connect to a live clinic system, reserve actual appointment slots, store patient records or transmit personal information.
 
 # Architecture and State Management
 
